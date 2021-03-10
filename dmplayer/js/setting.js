@@ -148,7 +148,8 @@ var YZM = {
 			}, 1 * 1500);
 		},
 		'next': function() {
-			top.location.href = up.mylink + config.next;
+			//top.location.href = up.mylink + config.next;
+			top.location.href = up.linknext;
 		},
 		'try': function() {
 			if (up.trysee > 0 && config.group < config.group_x && config.group != '') {
