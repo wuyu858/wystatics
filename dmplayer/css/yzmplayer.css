@@ -1962,6 +1962,10 @@ f .yzmplayer.yzmplayer-mobile .yzmplayer-controller .yzmplayer-icons .yzmplayer-
 	left: 17px;
 }
 
+.yzmplayer-controller .yzmplayer-icons .yzmplayer-toggle input+label.checked {
+	background: rgba(251, 114, 153, 0.92);
+}
+
 .yzmplayer-danmaku {
 	position: absolute;
 	left: 0;
