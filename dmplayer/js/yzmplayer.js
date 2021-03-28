@@ -1413,7 +1413,7 @@
 					t += s(r("Input danmaku, hit Enter")), t +=
 					'" maxlength="30">\n        <button class="yzmplayer-icon yzmplayer-send-icon" data-balloon="', t += s(r(
 						"Send")), t += '" data-balloon-pos="up">\n            <span class="yzmplayer-icon-content">', t += l.send, t +=
-					'</span>\n        </button>\n<input id="dmtext" dmtype="right" size="27.5px" class="yzm-yzmplayer-comment-input" type="text" placeholder="',
+					'</span>\n        </button>\n<input id="dmtext" autocomplete="off" dmtype="right" size="27.5px" class="yzm-yzmplayer-comment-input" type="text" placeholder="',
 					t += s(r("Input danmaku, hit Enter")), t +=
 					'" maxlength="30" >\n        <button class="yzmplayer-icon yzm-yzmplayer-send-icon" data-balloon="', t += s(r(
 						"Send")), t +=
