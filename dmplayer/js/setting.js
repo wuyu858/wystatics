@@ -381,6 +381,10 @@ var YZM = {
 						return;
 					}
 				}
+				if (/\w{8}/.test(a) && !/6{1,8}/.test(a)) {
+					layer.msg("请勿发送无意义内容，请遵守弹幕礼仪哦");
+					return;
+				}
 				if (a.length < 1) {
 					layer.msg("要输入弹幕内容哦！");
 					return;
@@ -543,7 +547,7 @@ var YZM = {
 		});
 	},
 	'timeupdateHandler': function() {
-		if (YZM.dp.video.currentTime > 120) {
+		if (YZM.dp.video.currentTime > 110) {
 		    YZM.setCookie("time_" + config.url, YZM.dp.video.currentTime, 24);
 		}
 	},
