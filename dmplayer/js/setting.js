@@ -148,8 +148,10 @@ var YZM = {
 			}, 1 * 1500);
 		},
 		'next': function() {
-			//top.location.href = up.mylink + config.next;
-			top.location.href = up.linknext;
+			top.location.href = up.mylink + config.next;
+		},
+		'linknext': function() {
+			if (up.linknext) top.location.href = up.linknext;
 		},
 		'try': function() {
 			if (up.trysee > 0 && config.group < config.group_x && config.group != '') {
@@ -183,6 +185,7 @@ var YZM = {
 		},
 		'end': function() {
 			layer.msg("播放结束啦=。=");
+			YZM.video.linknext();
 		},
 		'con_play': function() {
 			if (!danmuon) {
@@ -529,7 +532,9 @@ var YZM = {
 		});
 	},
 	'timeupdateHandler': function() {
-		YZM.setCookie("time_" + config.url, YZM.dp.video.currentTime, 24);
+		if (YZM.dp.video.currentTime > 120) {
+		    YZM.setCookie("time_" + config.url, YZM.dp.video.currentTime, 24);
+		}
 	},
 	'endedHandler': function() {
 		YZM.setCookie("time_" + config.url, "", -1);
