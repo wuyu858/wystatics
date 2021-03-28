@@ -318,6 +318,17 @@ var YZM = {
 						};
 					}, 1000);
 				};
+			} else if (up.linknext != '') {
+			    if (YZM.lasts == 1) {
+					setInterval(function() {
+						var e = YZM.dp.video.duration - YZM.dp.video.currentTime;
+						if (e < YZM.last_tip) YZM.dp.notice('即将为您跳过片尾，播放下一集');
+						if (YZM.lastt > 0 && e < YZM.lastt) {
+							YZM.setCookie("time_" + config.url, "", -1);
+							YZM.video.linknext();
+						};
+					}, 1000);
+				};
 			} else {
 				$(".icon-xj").remove();
 			};
@@ -356,7 +367,7 @@ var YZM = {
 			});
 			g.on("click", function() {
 				a = document.getElementById("dmtext");
-				a = a.value;
+				a = a.value.replace(/^\s+|\s+$/g,'');
 				b = d.attr("dmtype");
 				c = d.css("color");
 				z = d.attr("size");
@@ -366,12 +377,12 @@ var YZM = {
 				}
 				for (var i = 0; i < up.pbgjz.length; i++) {
 					if (a.search(up.pbgjz[i]) != -1) {
-						layer.msg("请勿发送无意义内容，规范您的弹幕内容");
+						layer.msg("请勿发送无意义内容，请遵守弹幕礼仪哦");
 						return;
 					}
 				}
 				if (a.length < 1) {
-					layer.msg("要输入弹幕内容啊喂！");
+					layer.msg("要输入弹幕内容哦！");
 					return;
 				}
 				var e = Date.parse(new Date());
