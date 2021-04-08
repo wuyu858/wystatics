@@ -148,7 +148,12 @@ var YZM = {
 			}, 1 * 1500);
 		},
 		'next': function() {
-			top.location.href = up.mylink + config.next;
+		    if (config.next) {
+		        location.href = up.mylink + config.next;
+		    }
+			else {
+			    YZM.video.linknext();
+			}
 		},
 		'linknext': function() {
 			if (up.linknext) top.location.href = up.linknext;
@@ -377,12 +382,12 @@ var YZM = {
 				}
 				for (var i = 0; i < up.pbgjz.length; i++) {
 					if (a.search(up.pbgjz[i]) != -1) {
-						layer.msg("请勿发送无意义内容，请遵守弹幕礼仪哦");
+						layer.msg("请遵守弹幕礼仪，发送与视频相关的弹幕哦");
 						return;
 					}
 				}
 				if (/\w{8}/.test(a) && !/6{1,8}/.test(a)) {
-					layer.msg("请勿发送无意义内容，请遵守弹幕礼仪哦");
+					layer.msg("请遵守弹幕礼仪，发送与视频相关的弹幕哦");
 					return;
 				}
 				if (a.length < 1) {
