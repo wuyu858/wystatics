@@ -44,18 +44,18 @@ var YZM = {
 				}
 			},
 			error: function(e) {
-                YZM.waittime = 3;
-				YZM.ads = {state:'off'};
+			    YZM.waittime = 3;
+				YZM.ads = {state:'off', set:{}, pause:{}};
 				config.logo = '';
 				up.pbgjz = '艹,操你,草你,妈逼,AV,女优,看片加我,含住,日他,干他,舔她,射他,床上射,啪啪啪,FUCK YOU,赌场,荷官,网站,支付宝,企,关注,wx,微信,qq,QQ';
 				up.trysee = 5;
 				config.sendtime = 5;
 				config.color = '#00a1d6';
 				config.dmrule = '../dmku/dm_rule.html';
-				danmuon = 'off';
+				danmuon = '';
 				
 				YZM.play(config.url);
-			},
+			}
 		});
 	},
 	'play': function(url) {
@@ -161,11 +161,11 @@ var YZM = {
 			}, 1 * 1500);
 		},
 		'next': function() {
-            if (config.next) {
-                location.href = up.mylink + config.next;
-            }
+		    if (config.next) {
+		        location.href = up.mylink + config.next;
+		    }
 			else {
-                YZM.video.linknext();
+			    YZM.video.linknext();
 			}
 		},
 		'linknext': function() {
