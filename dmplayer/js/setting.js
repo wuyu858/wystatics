@@ -44,8 +44,8 @@ var YZM = {
 				}
 			},
 			error: function(e) {
-			    YZM.waittime = 3;
-				YZM.ads = {state:'off', set:{}, pause:{}};
+                YZM.waittime = 3;
+				YZM.ads = {state:'off'};
 				config.logo = '';
 				up.pbgjz = '艹,操你,草你,妈逼,AV,女优,看片加我,含住,日他,干他,舔她,射他,床上射,啪啪啪,FUCK YOU,赌场,荷官,网站,支付宝,企,关注,wx,微信,qq,QQ';
 				up.trysee = 5;
@@ -55,7 +55,7 @@ var YZM = {
 				danmuon = '';
 				
 				YZM.play(config.url);
-			}
+			},
 		});
 	},
 	'play': function(url) {
@@ -161,11 +161,11 @@ var YZM = {
 			}, 1 * 1500);
 		},
 		'next': function() {
-		    if (config.next) {
-		        location.href = up.mylink + config.next;
-		    }
+            if (config.next) {
+                location.href = up.mylink + config.next;
+            }
 			else {
-			    YZM.video.linknext();
+                YZM.video.linknext();
 			}
 		},
 		'linknext': function() {
@@ -436,7 +436,7 @@ var YZM = {
 			$(".yzmplayer-list-icon,.yzm-yzmplayer-send-icon").on("click", function() {
 				$(".list-show").empty();
 				$.ajax({
-					url: config.api + "?ac=get&id=" + YZM.id,
+					url: config.api + "?ac=get&id=" + YZM.id + "&token=" + config.token,
 					success: function(d) {
 						if (d.code == 23) {
 							a = d.danmuku;
@@ -643,7 +643,7 @@ var YZM = {
 				},
 				danmaku: {
 					id: YZM.id,
-					api: config.api + '?ac=dm',
+					api: config.api + '?ac=dm&token=' + config.token,
 					user: config.user
 				}
 			});
